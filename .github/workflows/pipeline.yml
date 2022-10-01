@@ -1,6 +1,6 @@
-- name: Deployment pipeline
+name: Deployment pipeline
 
-- on:
+on:
     push:
       branches:
         - master
