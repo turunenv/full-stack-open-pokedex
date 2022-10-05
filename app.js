@@ -4,9 +4,12 @@ const app = express()
 // Heroku dynamically sets a port
 const PORT = process.env.PORT || 5000
 
-//testing github actions first workflow
-
 app.use(express.static('dist'))
+
+//healthcheck endpoint
+app.get('/health', (req, res) => {
+  res.send('ok')
+})
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
