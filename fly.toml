@@ -25,17 +25,19 @@ processes = []
   internal_port = 8080
   processes = ["app"]
   protocol = "tcp"
-  script_checks = []
   [services.concurrency]
     hard_limit = 25
     soft_limit = 20
     type = "connections"
 
-[[services.http_checks]]
+  [[services.http_checks]]
     grace_period = "5s"
     method = "get"
     path = "/health"
     protocol = "http"
+  [[services.script_checks]]
+    grace_period: "5s"
+    command: "~/health_check.sh"
 
   [[services.ports]]
     force_https = true
