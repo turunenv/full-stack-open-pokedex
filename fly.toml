@@ -37,7 +37,7 @@ processes = []
     protocol = "http"
   [[services.script_checks]]
     grace_period = "5s"
-    command = "~/health_check.sh"
+    command = "/app/health_check.sh"
     interval      = "5s"
     restart_limit = 0
     timeout       = "1s"
